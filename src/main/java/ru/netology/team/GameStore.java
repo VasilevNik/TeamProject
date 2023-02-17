@@ -80,6 +80,8 @@ public class GameStore {
      * Суммирует общее количество времени всех игроков, проведённого
      * за играми этого каталога
      */
+
+
     public int getSumPlayedTime() {
         int sum = 0;
         for (String playerName : playedTime.keySet()) {
