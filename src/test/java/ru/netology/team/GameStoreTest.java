@@ -24,7 +24,7 @@ public class GameStoreTest {
         GameStore store = new GameStore();
         Game game1 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
         Game game2 = store.publishGame("Нетология Баттл Онлайн", "Гонки");
-        Game game3 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game3 = store.publishGame("Нетология Баттл", "Аркады");
         Game game4 = store.publishGame("Нетология Баттл Онлайн", "Гонки");
         Game game5 = store.publishGame("Нетология Баттл Онлайн", "Тетрис");
 

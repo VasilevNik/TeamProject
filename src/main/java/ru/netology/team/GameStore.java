@@ -3,7 +3,7 @@ package ru.netology.team;
 import java.util.*;
 
 public class GameStore {
-    private List<Game> games = new ArrayList<>();
+     List<Game> games = new ArrayList<>();
 
     /**
      * Информация о том, какой игрок сколько играл в игры этого каталога
