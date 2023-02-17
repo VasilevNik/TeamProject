@@ -39,10 +39,11 @@ public class GameStoreTest {
 //
 //        GameStore store = new GameStore();
 //
-//        store.addPlayTime("Vova", 11);
-//        store.addPlayTime("Ola", 5);
+////        store.addPlayTime("Vova", 11);
+////        store.addPlayTime("Ola", 5);
+//        store.addPlayTime("Tola", 15);
 //
-//        String expected = "Vova";
+//        String expected = "Tola";
 //        String actual = store.getMostPlayer();
 //        assertEquals(expected, actual);
 //
