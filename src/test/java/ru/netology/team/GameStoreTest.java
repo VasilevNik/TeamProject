@@ -18,18 +18,22 @@ public class GameStoreTest {
 
     // другие ваши тесты
 
-//    @Test
-//    public void shouldAddMoreOneGame() {
-//
-//        GameStore store = new GameStore();
-//        Game game1 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
-//        Game game2 = store.publishGame("Нетология Баттл Онлайн", "Гонки");
-//        Game game3 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
-//
-//        assertTrue(store.containsGame(game1));
-//        assertTrue(store.containsGame(game2));
-//        assertTrue(store.containsGame(game3));
-//    }
+    @Test
+    public void shouldAddMoreOneGame() {
+
+        GameStore store = new GameStore();
+        Game game1 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game2 = store.publishGame("Нетология Баттл Онлайн", "Гонки");
+        Game game3 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game4 = store.publishGame("Нетология Баттл Онлайн", "Гонки");
+        Game game5 = store.publishGame("Нетология Баттл Онлайн", "Тетрис");
+
+        assertTrue(store.containsGame(game1));
+        assertTrue(store.containsGame(game2));
+        assertTrue(store.containsGame(game3));
+        assertTrue(store.containsGame(game4));
+        assertTrue(store.containsGame(game5));
+    }
 //
 //
 //

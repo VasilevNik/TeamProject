@@ -19,12 +19,13 @@ public class GameStore {
     public Game publishGame(String title, String genre) {
 
         Game game = new Game(title, genre, this);
-
-        games.add(game);
-
-
+        if (games.isEmpty()) {
+            games.add(game);
+        }
+        if (!games.contains(game)) {
+            games.add(game);
+        }
         return game;
-
     }
 
 
