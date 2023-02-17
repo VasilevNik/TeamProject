@@ -26,11 +26,19 @@ public class Player {
      * если игра уже была, никаких изменений происходить не должно
      */
     public void installGame(Game game) {
+
 //        if (playedTime.containsKey(game)) {
 //            playedTime.put(game, playedTime.get(game));
 //        } else {
         playedTime.put(game, 0);
 //        }
+
+        if (playedTime.containsKey(game)) {
+            playedTime.put(game, playedTime.get(game));
+        } else {
+            playedTime.put(game, 0);
+        }
+
     }
 
     /**
@@ -44,10 +52,16 @@ public class Player {
         game.getStore().addPlayTime(name, hours);
         if (playedTime.containsKey(game)) {
             playedTime.put(game, playedTime.get(game));
+
 //            playedTime.put(game, hours);
         } else {
 
             playedTime.put(game, hours); // RuntimeException
+
+            playedTime.put(game, hours);
+        } else {
+            throw new RuntimeException("Игра " + game.getTitle() + " - не установлена");
+
         }
         return playedTime.get(game);
     }
@@ -74,6 +88,18 @@ public class Player {
      */
     public Game mostPlayerByGenre(String genre) {
 
+
         return null;
+
+        int playedTheMost = 0;
+        Game gameGenre = null;
+        for (Game game : playedTime.keySet()) {
+            if (genre.equals(game.getGenre()) && playedTheMost < playedTime.get(game)) {
+                playedTheMost = playedTime.get(game);
+                gameGenre = game;
+            }
+        }
+        return gameGenre;
+
     }
 }
