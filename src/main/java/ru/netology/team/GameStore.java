@@ -3,14 +3,14 @@ package ru.netology.team;
 import java.util.*;
 
 public class GameStore {
-     List<Game> games = new ArrayList<>();
+    private List<Game> games = new ArrayList<>();
 
     /**
      * Информация о том, какой игрок сколько играл в игры этого каталога
      * Ключ - имя игрока
      * Значение - суммарное количество часов в игры этого каталога
      */
-    private Map<String, Integer> playedTime = new HashMap<>();
+    Map<String, Integer> playedTime = new HashMap<>();
 
     /**
      * Создание объекта игры с заданными заголовком и жанром

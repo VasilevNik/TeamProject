@@ -52,8 +52,9 @@ public class GameStoreTest {
 
         GameStore store = new GameStore();
         store.publishGame("Нетология Баттл Онлайн", "Аркады");
+        Game game2 = store.publishGame("Морской Бой", "Аркады");
 
-        assertFalse(store.containsGame(store.publishGame("Морской Бой", "Аркады")));
+        assertTrue(store.containsGame(game2));
     }
 
     @Test
@@ -63,14 +64,14 @@ public class GameStoreTest {
         store.publishGame("Нетология Баттл Онлайн", "Аркады");
 
 
-        assertFalse(store.containsGame(store.publishGame("Нетология Баттл Онлайн", "Стратегии")));
+        assertTrue(store.containsGame(store.publishGame("Нетология Баттл Онлайн", "Стратегии")));
     }
 
     @Test
     public void findPlayerWhoPlayedTheGameForOneHour() {
 
         GameStore store = new GameStore();
-        store.addPlayTime("Kolya",1);
+        store.addPlayTime("Kolya", 1);
 
         String expected = "Kolya";
         String actual = store.getMostPlayer();
@@ -82,8 +83,9 @@ public class GameStoreTest {
     public void findPlayerWhoPlayedTheGameMostTime() {
 
         GameStore store = new GameStore();
-        store.addPlayTime("Kolya",1);
-        store.addPlayTime("Dima", 2);
+        store.addPlayTime("Kolya", 1);
+        store.addPlayTime("Dima", 10);
+        store.addPlayTime("Sasha", 5);
 
         String expected = "Dima";
         String actual = store.getMostPlayer();
@@ -95,7 +97,7 @@ public class GameStoreTest {
     public void findPlayersWhoHaveNotPlayedTheGameInThisCatalog() {
 
         GameStore store = new GameStore();
-        store.addPlayTime("Sasha",0);
+        store.addPlayTime("Sasha", 0);
 
         String expected = null;
         String actual = store.getMostPlayer();
@@ -107,7 +109,7 @@ public class GameStoreTest {
     public void sumUpTotalAmountOfTimeAllPlayersSpentPlayingTheGame() {
 
         GameStore store = new GameStore();
-        store.addPlayTime("Kolya",1);
+        store.addPlayTime("Kolya", 1);
         store.addPlayTime("Dima", 2);
 
         int expected = 3;
@@ -163,76 +165,6 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game4));
         assertTrue(store.containsGame(game5));
     }
-//
-//
-//
-//
-//    @Test
-//    public void getPlayerBestTime() {
-//
-//        GameStore store = new GameStore();
-//
-////        store.addPlayTime("Vova", 11);
-////        store.addPlayTime("Ola", 5);
-//        store.addPlayTime("Tola", 15);
-//
-//        String expected = "Tola";
-//        String actual = store.getMostPlayer();
-//        assertEquals(expected, actual);
-//
-//    }
-//
-//    @Test
-//    public void playerNotFound() {
-//
-//        GameStore store = new GameStore();
-//
-//        String expected = null;
-//        String actual = store.getMostPlayer();
-//        assertEquals(expected, actual);
-//
-//
-//    }
-//
-//    @Test
-//    public void getSumPlayedTimePlayers() {
-//
-//        GameStore store = new GameStore();
-//
-//        store.addPlayTime("Olja", 2);
-//        store.addPlayTime("Tolja", 4);
-//        store.addPlayTime("Vova", 7);
-//
-//        int expected = 13;
-//        int actual = store.getSumPlayedTime();
-//
-//        Assertions.assertEquals(expected, actual);
-//
-//    }
-//
-//    @Test
-//    public void getSumPlayedTimePlayer() {
-//
-//        GameStore store = new GameStore();
-//
-//        store.addPlayTime("Vova", 5);
-//        store.addPlayTime("Vova", 7);
-//        store.addPlayTime("Vova", 5);
-//
-//        int expected = 17;
-//        int actual = store.getSumPlayedTime();
-//
-//        Assertions.assertEquals(expected, actual);
-//
-//    }
-//    @Test
-//    public void shouldAddGameThatIsAlreadyInTheCatalog() {
-//
-//        GameStore store = new GameStore();
-//        store.publishGame("Нетология Баттл Онлайн", "Аркады");
-//
-//
-//        assertTrue(store.containsGame(store.publishGame("Нетология Баттл Онлайн", "Аркады")));
-//    }
 
 }
+

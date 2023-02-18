@@ -1,4 +1,5 @@
 package ru.netology.team;
+
 import java.util.Objects;
 
 public class Game {
